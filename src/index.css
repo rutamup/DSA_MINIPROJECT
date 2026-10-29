@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-orig: #3b82f6;       /* Blue accent for Original */
+    --color-orig-glow: rgba(59, 130, 246, 0.25);
+    --color-huff: #10b981;       /* Emerald accent for Huffman */
+    --color-huff-glow: rgba(16, 185, 129, 0.25);
+  }
+
+  body {
+    @apply antialiased transition-colors duration-200;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+}
+
+/* Custom scrollbars for data tables and bitstrings */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.7);
+}
+
+/* Monospace bit animation */
+.font-mono-bits {
+  font-family: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
