@@ -170,24 +170,20 @@ export const HuffmanTreeVisualizer: React.FC<HuffmanTreeVisualizerProps> = ({
   }, [nodes, tree, highlightedSymbol]);
 
   return (
-    <div className="w-full overflow-x-auto bg-slate-900/90 rounded-2xl p-4 border border-slate-800 shadow-inner">
-      <div className="flex items-center justify-between text-xs text-slate-400 mb-2 px-2">
+    <div className="w-full overflow-x-auto rounded-2xl p-4 border border-slate-800 bg-slate-900/90 shadow-inner">
+      <div className="flex flex-wrap items-center justify-between gap-3 text-xs text-slate-400 mb-2 px-2">
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-1.5">
-            <span className="w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-emerald-300" />
+            <span className="w-3.5 h-3.5 rounded-full bg-blue-500 border-2 border-blue-300" />
             <span>Leaf node (char : freq)</span>
           </div>
           <div className="flex items-center gap-1.5">
-            <span className="w-3.5 h-3.5 rounded-full bg-indigo-600 border border-indigo-400" />
+            <span className="w-3.5 h-3.5 rounded-full bg-rose-600 border border-rose-400" />
             <span>Internal node (sum freq)</span>
-          </div>
-          <div className="flex items-center gap-1.5">
-            <span className="text-amber-400 font-mono font-bold">0 / 1</span>
-            <span>Binary branch</span>
           </div>
         </div>
         {highlightedSymbol && (
-          <span className="text-emerald-400 font-medium">
+          <span className="text-blue-400 font-medium">
             Highlighting: <strong className="text-white">'{highlightedSymbol}'</strong>
           </span>
         )}
@@ -204,6 +200,7 @@ export const HuffmanTreeVisualizer: React.FC<HuffmanTreeVisualizerProps> = ({
             <feComposite in="SourceGraphic" in2="blur" operator="over" />
           </filter>
         </defs>
+        <g>
 
         {/* Draw Edges */}
         {edges.map((edge, idx) => {
@@ -316,6 +313,7 @@ export const HuffmanTreeVisualizer: React.FC<HuffmanTreeVisualizerProps> = ({
             </g>
           );
         })}
+        </g>
       </svg>
     </div>
   );
